@@ -2,7 +2,7 @@
   "name": "cn-graphql-handson",
   "version": "1.0.0",
   "description": "App for hands-on on GraphQL topic that will be henld in CN group at 30.7",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "git@github.com:CorwinCZ/cn-graphql-handson.git",
   "author": "Petr Čaněk <canekpet@gmail.com>",
   "license": "MIT",
