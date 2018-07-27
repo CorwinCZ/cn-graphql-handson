@@ -1,94 +1,127 @@
-// Import React
 import React from 'react';
-
-// Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
   Text,
+  Appear,
+  Link,
+  Image,
 } from 'spectacle';
 
-// Import theme
 import createTheme from 'spectacle/lib/themes/default';
 
-// Require CSS
+import graphqlYogaLogo from './assets/graphql-yoga-logo.png';
+import prismaLogo from './assets/prisma-logo.png';
+
 require('normalize.css');
 
 const theme = createTheme(
   {
     primary: 'white',
-    secondary: '#1F2022',
-    tertiary: '#03A9FC',
-    quartenary: '#CECECE',
+    secondary: '#1F2022', // Black
+    tertiary: '#03A9FC', // Blue
+    quarternary: '#CECECE', // Gray
   },
   {
     primary: 'Montserrat',
     secondary: 'Helvetica',
-  }
+  },
 );
 
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck
-        transition={['zoom', 'slide']}
-        transitionDuration={500}
-        theme={theme}
-      >
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+      <Deck transitionDuration={500} theme={theme}>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading size={1} fit textColor="secondary">
+            GraphQL hands-on
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
+          <Text textColor="tertiary" size={1}>
+            Petr Čaněk
+          </Text>
+          <Text textColor="tertiary" size={1}>
+            Lenka Vondráčková
+          </Text>
+          <Text textColor="tertiary" size={1}>
+            Tomáš Horáček
           </Text>
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>
-            Typography
+        {/* TODO libraries description */}
+
+        {/* TODO graphql yoga */}
+        <Slide transition={['fade']}>
+          <Heading size={4} textColor="tertiary">
+            GraphQL yoga
+            <Image src={graphqlYogaLogo} height={100} />
           </Heading>
-          <Heading size={1} textColor="secondary">
-            Heading 1
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
-        </Slide>
-        <Slide transition={['fade']} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>
-            Standard List
-          </Heading>
+          <Link href="https://github.com/prismagraphql/graphql-yoga">
+            {'https://github.com/prismagraphql/graphql-yoga'}
+          </Link>
+
           <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
+            <Appear>
+              <ListItem textSize={37}>
+                Set of libraries for easy GraphQL server set-up
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>Pre-configurated environment</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>Subscriptions + Apollo Tracing</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>
+                Based on Express (and can be extended with Express middlewares)
+              </ListItem>
+            </Appear>
           </List>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+        {/* TODO prisma */}
+        <Slide transition={['fade']}>
+          <Heading size={4} textColor="tertiary">
+            Prisma
+            <Image src={prismaLogo} height={150} />
+          </Heading>
+          <Link href="https://github.com/prismagraphql/prisma">
+            {'https://github.com/prismagraphql/prisma'}
+          </Link>
+
+          <List>
+            <Appear>
+              <ListItem textSize={37}>
+                ORM-like layer between GraphQL server and DB
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>
+                Needs schema (written in GraphQL SDL) and optionally DB
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>
+                Can generate DB structure based on schema
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>
+                Generates GraphQL CRUD API from schema
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>Can handle DB migrations</ListItem>
+            </Appear>
+          </List>
         </Slide>
+        {/* TODO prisma bindings */}
+        {/* TODO graphqlconfig */}
+
+        {/* TODO prisma */}
+
+        {/* TODO example - https://github.com/prismagraphql/graphql-server-example */}
       </Deck>
     );
   }
