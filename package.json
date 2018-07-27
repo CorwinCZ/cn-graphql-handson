@@ -1,0 +1,18 @@
+{
+  "name": "cn-graphql-handson",
+  "version": "1.0.0",
+  "description": "App for hands-on on GraphQL topic that will be henld in CN group at 30.7",
+  "main": "index.js",
+  "repository": "git@github.com:CorwinCZ/cn-graphql-handson.git",
+  "author": "Petr Čaněk <canekpet@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "graphql-cli": "^2.16.5",
+    "prettier": "^1.13.7",
+    "prisma": "^1.12.0"
+  }
+}
