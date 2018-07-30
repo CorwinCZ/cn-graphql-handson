@@ -8,28 +8,23 @@ const resolvers = {
     infoQuery: () => {
       return 'Test string';
     },
-    authorQuery: (_, args) => {
-      return authorList[args.authorIndex];
+    authorQuery: (_, args, context, info) => {
+      return context.db.query.author(args, info);
     },
-    authorListQuery: () => {
-      return authorList;
+    authorListQuery: (_, args, context, info) => {
+      return context.db.query.authors({}, info);
+      // return authorList;
     },
     bookQuery: () => {
       return bookList[2];
     },
-  },
-  Author: {
-    books: (author, args, context, info) => {
-      return bookList.filter(book => {
-        return book.author === author.id;
-      });
+    bookListQuery: (_, args, context, info) => {
+      return context.db.query.books({}, info);
     },
   },
-  Book: {
-    author: (book, args, context, info) => {
-      return authorList.find(author => {
-        return author.id === book.author;
-      });
+  Mutation: {
+    createAuthor: (_, args, context, info) => {
+      return context.db.mutation.createAuthor(args, info);
     },
   },
 };

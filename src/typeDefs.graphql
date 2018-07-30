@@ -1,8 +1,22 @@
 type Query {
   infoQuery: String!
-  authorQuery(authorIndex: Int!): Author!
+  authorQuery(where: AuthorWhereUniqueInput!): Author!
   authorListQuery: [Author!]!
   bookQuery: Book!
+  bookListQuery: [Book!]!
+}
+
+type Mutation {
+  createAuthor(data: AuthorCreateInput!): Author!
+}
+
+input AuthorCreateInput {
+  name: String
+  biography: String
+}
+
+input AuthorWhereUniqueInput {
+  id: ID
 }
 
 type Author {
