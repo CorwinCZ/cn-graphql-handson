@@ -8,11 +8,17 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.js'"
+    "prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.js'",
+    "server:start": "nodemon src/index.js"
   },
   "devDependencies": {
     "graphql-cli": "^2.16.5",
     "prettier": "^1.13.7",
     "prisma": "^1.12.0"
+  },
+  "dependencies": {
+    "graphql": "^0.13.2",
+    "graphql-yoga": "^1.14.12",
+    "nodemon": "^1.18.3"
   }
 }
