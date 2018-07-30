@@ -15,6 +15,7 @@ import createTheme from 'spectacle/lib/themes/default';
 
 import graphqlYogaLogo from './assets/graphql-yoga-logo.png';
 import prismaLogo from './assets/prisma-logo.png';
+import graphqlDiagram from './assets/graphql-diagram.png';
 
 require('normalize.css');
 
@@ -43,13 +44,25 @@ export default class Presentation extends React.Component {
             Petr Čaněk
           </Text>
           <Text textColor="tertiary" size={1}>
-            Lenka Vondráčková
-          </Text>
-          <Text textColor="tertiary" size={1}>
             Tomáš Horáček
           </Text>
         </Slide>
         {/* TODO libraries description */}
+
+        <Slide transition={['fade']}>
+          <Heading size={3} textColor="secondary">
+            GraphQL is
+          </Heading>
+          <Appear>
+            <Heading size={3} textColor="tertiary">
+              Alternative to REST
+            </Heading>
+          </Appear>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Image src={graphqlDiagram} />
+        </Slide>
 
         {/* TODO graphql yoga */}
         <Slide transition={['fade']}>
