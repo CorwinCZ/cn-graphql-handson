@@ -6,8 +6,8 @@ const resolvers = {
     infoQuery: () => {
       return 'Test string';
     },
-    authorQuery: () => {
-      return authorList[0];
+    authorQuery: (_, args) => {
+      return authorList[args.authorIndex];
     },
     authorListQuery: () => {
       return authorList;
@@ -16,10 +16,17 @@ const resolvers = {
       return bookList[2];
     },
   },
+  Author: {
+    books: (author, args, context, info) => {
+      return bookList.filter(book => {
+        return book.author === author.id;
+      });
+    },
+  },
   Book: {
-    author: (obj, args, context, info) => {
-      return authorList.find(item => {
-        return item.id === obj.author;
+    author: (book, args, context, info) => {
+      return authorList.find(author => {
+        return author.id === book.author;
       });
     },
   },

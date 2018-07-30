@@ -1,6 +1,6 @@
 type Query {
   infoQuery: String!
-  authorQuery: Author!
+  authorQuery(authorIndex: Int!): Author!
   authorListQuery: [Author!]!
   bookQuery: Book!
 }
@@ -9,6 +9,7 @@ type Author {
   id: ID!
   name: String
   biography: String
+  books: [Book!]!
 }
 
 type Book {
