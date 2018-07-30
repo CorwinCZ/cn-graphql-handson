@@ -1,9 +1,26 @@
 const { GraphQLServer } = require('graphql-yoga');
+const { bookList, authorList } = require('./testData');
 
 const resolvers = {
   Query: {
-    info: () => {
+    infoQuery: () => {
       return 'Test string';
+    },
+    authorQuery: () => {
+      return authorList[0];
+    },
+    authorListQuery: () => {
+      return authorList;
+    },
+    bookQuery: () => {
+      return bookList[2];
+    },
+  },
+  Book: {
+    author: (obj, args, context, info) => {
+      return authorList.find(item => {
+        return item.id === obj.author;
+      });
     },
   },
 };

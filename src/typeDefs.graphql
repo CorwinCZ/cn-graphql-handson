@@ -1,3 +1,19 @@
 type Query {
-  info: String!
+  infoQuery: String!
+  authorQuery: Author!
+  authorListQuery: [Author!]!
+  bookQuery: Book!
+}
+
+type Author {
+  id: ID!
+  name: String
+  biography: String
+}
+
+type Book {
+  id: ID!
+  name: String
+  description: String
+  author: Author!
 }
