@@ -1,4 +1,6 @@
 const { GraphQLServer } = require('graphql-yoga');
+const { Prisma } = require('prisma-binding');
+
 const { bookList, authorList } = require('./testData');
 
 const resolvers = {
@@ -35,6 +37,13 @@ const resolvers = {
 const server = new GraphQLServer({
   typeDefs: './src/typeDefs.graphql',
   resolvers: resolvers,
+  context: req => ({
+    ...req,
+    db: new Prisma({
+      typeDefs: './src/generated/prisma.graphql',
+      endpoint: 'https://eu1.prisma.sh/petr-canek-398ab8/books-orm/dev',
+    }),
+  }),
 });
 
 server.start(() => console.log(`🚀  Server ready at http://localhost:4000`));
