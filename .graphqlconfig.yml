@@ -7,4 +7,4 @@ projects:
   prisma:
     schemaPath: ./src/generated/prisma.graphql
     extensions:
-      prisma: book-orm/prisma.yml
+      prisma: books-orm/prisma.yml
