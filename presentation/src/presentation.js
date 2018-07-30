@@ -117,9 +117,59 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         {/* TODO prisma bindings */}
-        {/* TODO graphqlconfig */}
+        <Slide transition={['fade']}>
+          <Heading size={4} textColor="tertiary">
+            Prisma bindings
+          </Heading>
+          <Link href="https://github.com/prismagraphql/prisma-binding">
+            {'https://github.com/prismagraphql/prisma-binding'}
+          </Link>
 
-        {/* TODO prisma */}
+          <List>
+            <Appear>
+              <ListItem textSize={37}>
+                Requires Prisma server and it's generated GraphQL API
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>Turns that into SDK</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>
+                Instead of quering the Prisma server, you can do:
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>
+                {`context.db.mutation.createRecepie(args)`}
+              </ListItem>
+            </Appear>
+          </List>
+        </Slide>
+
+        <Slide transition={['fade']}>
+          <Heading size={4} textColor="tertiary">
+            Our app
+          </Heading>
+          <List>
+            <Appear>
+              <ListItem textSize={37}>
+                Aim - build simple GraphQL API with persistent data
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>Simple book & author database</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem
+                textSize={37}
+              >{`Book: id, name, description, author`}</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize={37}>{`Author: id, name, biography`}</ListItem>
+            </Appear>
+          </List>
+        </Slide>
 
         {/* TODO example - https://github.com/prismagraphql/graphql-server-example */}
       </Deck>
