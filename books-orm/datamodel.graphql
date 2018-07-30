@@ -1,0 +1,12 @@
+type Author {
+  id: ID! @unique
+  name: String
+  biography: String
+}
+
+type Book {
+  id: ID! @unique
+  name: String
+  description: String
+  author: Author!
+}

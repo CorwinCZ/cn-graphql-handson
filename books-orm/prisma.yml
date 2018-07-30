@@ -1,0 +1,2 @@
+endpoint: https://eu1.prisma.sh/petr-canek-398ab8/books-orm/dev
+datamodel: datamodel.graphql
