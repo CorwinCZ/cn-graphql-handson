@@ -9,7 +9,8 @@
   "private": false,
   "scripts": {
     "prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.js'",
-    "dev": "backpack src/index.js"
+    "dev": "backpack src/index.js",
+    "generate-orm": "graphql get-schema -p prisma"
   },
   "devDependencies": {
     "graphql-cli": "^2.16.5",
