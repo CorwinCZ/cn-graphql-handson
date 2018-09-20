@@ -11,8 +11,15 @@ const resolvers = {
     getBookList: () => {
       return bookList;
     },
-    getBook: () => {
-      return bookList[0];
+    getBook: (obj, { bookIndex }) => bookList[bookIndex.value],
+  },
+  Mutation: {
+    createAuthor: (obj, { data }) => {
+      console.log('We got', data);
+      return {
+        id: 'author-new',
+        ...data,
+      };
     },
   },
   Book: {

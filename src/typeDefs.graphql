@@ -2,7 +2,20 @@ type Query {
   info: String!
   getAuthorList: [Author!]!
   getBookList: [Book!]!
-  getBook: Book!
+  getBook(bookIndex: BookIndex!): Book!
+}
+
+type Mutation {
+  createAuthor(data: NewAuthor!): Author!
+}
+
+input NewAuthor {
+  name: String!
+  biography: String!
+}
+
+input BookIndex {
+  value: Int!
 }
 
 type Author {
