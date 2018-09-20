@@ -1,4 +1,4 @@
-const bookList = [
+export const bookList = [
   {
     id: 'book-1',
     name: 'Malý princ',
@@ -37,7 +37,7 @@ Alternativou ke splnění jejího úkolu je drtivá porážka, avšak v tomto p�
   },
 ];
 
-const authorList = [
+export const authorList = [
   {
     id: 'author-1',
     name: 'Antoine de Saint-Exupéry',
@@ -74,8 +74,3 @@ Mnohá jeho díla mají silně militaristický náboj a odehrávají se v námo�
 Nejznámějším z jeho hrdinů je Honor Harringtonová. Kolem této hrdinky vystavěl autor celý vesmír známý pod názvem „Honorverse“. Ten zahrnuje víc než dvanáct románů a několik sbírek povídek. Vesmír má vlastní politiku, pokročilé technologie, náboženství, kulturu i faunu a flóru. Hlavní příběh se však odehrává kolem válečného konfliktu mezi Mantichorským královstvím a Lidovou republikou Haven. Před Honor staví autor nelehké úkoly, které tato překonává svou odvahou, taktikou a vůlí, s níž jako kapitánka křižníků motivuje svou posádku k nejlepším výkonům.`,
   },
 ];
-
-module.exports = {
-  bookList,
-  authorList,
-};
