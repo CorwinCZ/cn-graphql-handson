@@ -43,9 +43,6 @@ export default class Presentation extends React.Component {
           <Text textColor="tertiary" size={1}>
             Petr Čaněk
           </Text>
-          <Text textColor="tertiary" size={1}>
-            Tomáš Horáček
-          </Text>
         </Slide>
         {/* TODO libraries description */}
 
